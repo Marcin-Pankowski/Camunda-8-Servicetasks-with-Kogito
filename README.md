@@ -30,11 +30,11 @@ or
     3.3 Open Zeebe Client Properties.
     ![Zeebe Client Properties](images/EditJobHandlerProperies.png)
     3.4 Configure your JobType.
-5. Start the Service : mvn clean install quarkus:dev.
+5. Start the service : mvn clean install quarkus:dev.
 6. Start Camunda 8.
 7. Start your Camunda 8 Process.
 
 # Test
-A Simple Test Example is provided in the test Folder. 
+A Simple Test Example is provided in the test folder. 
 
 Copyright 2024 www.piu.de
