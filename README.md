@@ -38,6 +38,39 @@ or
 6. Start Camunda 8.
 7. Start your Camunda 8 Process.
 
+## How to use Quarkus
+
+Start developing:
+mvn quarkus:dev
+
+Open Quarkus Dev UI:
+press 'd'
+
+Change code and recompile:
+No need to recompile, just save the code and continue developing.
+
+Change the BPMN and recompile:
+No need to recompile, just save the code and continue modeling.
+
+Change a Test and recompile:
+No need to recompile, just save the code and continue testing.
+
+## API first?!
+
+Sure! Everywhere!
+
+Just open your process properties, add process data, and include a tag (input). Then, open the Dev UI and access SwaggerUI to examine the schema of POST ComplexServiceExample. This approach is applicable to every element, including outputs as well!
+
+Wondering about complex data structures? Absolutely, they're supported!
+
+## How to write delegates to use Services in your process...
+
+There's no need to. Simply write your Java Service and don't forget to annotate it with @Singleton, then use it in a service task. No boilerplate code is needed in Kogito.
+
+You can even use services in script tasks—it's all Java!
+
+En Example Service is provided in this template.
+
 # Test
 A Simple Test Example is provided in the test folder. 
 
