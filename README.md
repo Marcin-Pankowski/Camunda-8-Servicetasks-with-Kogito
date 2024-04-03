@@ -28,12 +28,12 @@ or
 
 3. Open ShortPollJobWorkerExample.bpmn.
     3.1 Click on "Activate Camunda Jobs"-Service Task.
-    ![ServiceTask](images/ServiceTask.png)
+    ![ServiceTask](docs/images/ServiceTask.png)
     3.2 Open Properties.
-    ![ServiceTask](images/EditServiceTask.png)
-    ![ServiceTask](images/EditServiceTask2.png)
+    ![ServiceTask](docs/images/EditServiceTask.png)
+    ![ServiceTask](docs/images/EditServiceTask2.png)
     3.3 Open Zeebe Client Properties.
-    ![Zeebe Client Properties](images/EditJobHandlerProperies.png)
+    ![Zeebe Client Properties](docs/images/EditJobHandlerProperies.png)
     3.4 Configure your JobType.
 5. Start the service : mvn clean install quarkus:dev.
 6. Start Camunda 8.
