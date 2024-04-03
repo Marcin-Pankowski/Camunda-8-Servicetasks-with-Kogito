@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_DiOoANP3EDyNav_bCXxw3w" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" xmlns:xsi="xsi" id="_k4JmsNP-EDyNav_bCXxw3w" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_activatedJobItem" structureRef="io.camunda.zeebe.client.api.response.ActivatedJob"/>
   <bpmn2:itemDefinition id="_inputVariablesItem" structureRef="java.util.Map&lt;String,Object&gt;"/>
   <bpmn2:itemDefinition id="_jobKeyItem" structureRef="Long"/>
-  <bpmn2:itemDefinition id="_outputVariablesItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_outputVariablesItem" structureRef="java.util.Map&lt;String,Object&gt;"/>
   <bpmn2:itemDefinition id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_InMessageType" structureRef=""/>
   <bpmn2:itemDefinition id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_OutMessageType" structureRef=""/>
-  <bpmn2:itemDefinition id="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableAInputXItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableBInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_inputVariablesJavaObjectInputXItem" structureRef="Object"/>
-  <bpmn2:itemDefinition id="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputXItem" structureRef="java.util.Map&lt;String,Object&gt;"/>
   <bpmn2:message id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_InMessage" itemRef="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_InMessageType"/>
   <bpmn2:message id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_OutMessage" itemRef="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_OutMessageType"/>
   <bpmn2:interface id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_ServiceInterface" name="de.piu.templates.kogito.service.ServiceExample" implementationRef="de.piu.templates.kogito.service.ServiceExample">
@@ -18,8 +16,8 @@
       <bpmn2:outMessageRef>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_OutMessage</bpmn2:outMessageRef>
     </bpmn2:operation>
   </bpmn2:interface>
-  <bpmn2:collaboration id="_4C7C61B6-BBA8-499A-AA75-89A245148D09" name="Default Collaboration">
-    <bpmn2:participant id="_AC433A55-33A4-450E-94C7-FC6F1F3E8874" name="Pool Participant" processRef="ComplexServiceExample"/>
+  <bpmn2:collaboration id="_6FB9EC20-A98D-49BB-831B-CEE321AA48BA" name="Default Collaboration">
+    <bpmn2:participant id="_1A52C7B8-D78E-4B67-9A0C-7FDF2D78A643" name="Pool Participant" processRef="ComplexServiceExample"/>
   </bpmn2:collaboration>
   <bpmn2:process id="ComplexServiceExample" drools:packageName="de.piu.templates.kogito" drools:version="1.0" drools:adHoc="false" name="ComplexServiceExample" isExecutable="true" processType="Public">
     <bpmn2:property id="activatedJob" itemSubjectRef="_activatedJobItem" name="activatedJob">
@@ -62,33 +60,15 @@
       <bpmn2:incoming>Flow_0inbxal</bpmn2:incoming>
       <bpmn2:outgoing>Flow_0ayuoij</bpmn2:outgoing>
       <bpmn2:ioSpecification>
-        <bpmn2:dataInput id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableAInputX" drools:dtype="String" itemSubjectRef="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableAInputXItem" name="variableA"/>
-        <bpmn2:dataInput id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableBInputX" drools:dtype="String" itemSubjectRef="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableBInputXItem" name="variableB"/>
         <bpmn2:dataInput id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_inputVariablesJavaObjectInputX" drools:dtype="Object" itemSubjectRef="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_inputVariablesJavaObjectInputXItem" name="inputVariablesJavaObject"/>
-        <bpmn2:dataOutput id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputX" drools:dtype="String" itemSubjectRef="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputXItem" name="variables"/>
+        <bpmn2:dataOutput id="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputX" drools:dtype="java.util.Map&lt;String*Object&gt;" itemSubjectRef="__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputXItem" name="variables"/>
         <bpmn2:inputSet>
-          <bpmn2:dataInputRefs>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableAInputX</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableBInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_inputVariablesJavaObjectInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet>
           <bpmn2:dataOutputRefs>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variablesOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation>
-        <bpmn2:targetRef>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableAInputX</bpmn2:targetRef>
-        <bpmn2:assignment>
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[Kogito]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableAInputX]]></bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation>
-        <bpmn2:targetRef>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableBInputX</bpmn2:targetRef>
-        <bpmn2:assignment>
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[rocks]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_variableBInputX]]></bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation>
         <bpmn2:sourceRef>inputVariables</bpmn2:sourceRef>
         <bpmn2:targetRef>_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_inputVariablesJavaObjectInputX</bpmn2:targetRef>
@@ -114,10 +94,10 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>Flow_0dggz8v</bpmn2:incoming>
       <bpmn2:outgoing>Flow_0inbxal</bpmn2:outgoing>
-      <bpmn2:script>inputVariables = new java.util.HashMap&lt;String,Object&gt;();
-inputVariables.put("KeyA", "JavaObject");
-inputVariables.put("KeyB", "as input!!!");
-kcontext.setVariable("inputVariables",inputVariables);</bpmn2:script>
+      <bpmn2:script>System.out.println("inputVariables: " + inputVariables);
+System.out.println("jobKey :" + jobKey);
+
+</bpmn2:script>
     </bpmn2:scriptTask>
     <bpmn2:startEvent id="_A322C46D-42A7-4678-BD98-9A61BFA93B91" name="Service Start">
       <bpmn2:extensionElements>
@@ -131,28 +111,28 @@ kcontext.setVariable("inputVariables",inputVariables);</bpmn2:script>
   <bpmndi:BPMNDiagram>
     <bpmndi:BPMNPlane bpmnElement="ComplexServiceExample">
       <bpmndi:BPMNShape id="shape__A322C46D-42A7-4678-BD98-9A61BFA93B91" bpmnElement="_A322C46D-42A7-4678-BD98-9A61BFA93B91">
-        <dc:Bounds height="56" width="56" x="158" y="106"/>
+        <dc:Bounds height="56" width="56" x="158" y="101"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__4D9BF4C2-7E35-451E-A60F-1A8FBD0F83A4" bpmnElement="_4D9BF4C2-7E35-451E-A60F-1A8FBD0F83A4">
-        <dc:Bounds height="102" width="154" x="347" y="83"/>
+        <dc:Bounds height="102" width="154" x="347" y="78"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__3D3B930C-46EF-4211-B8CC-F25399E71F51" bpmnElement="_3D3B930C-46EF-4211-B8CC-F25399E71F51">
-        <dc:Bounds height="56" width="56" x="1048" y="106"/>
+        <dc:Bounds height="56" width="56" x="1048" y="101"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC" bpmnElement="_6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC">
-        <dc:Bounds height="102" width="154" x="672" y="83"/>
+        <dc:Bounds height="102" width="154" x="672" y="78"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__A322C46D-42A7-4678-BD98-9A61BFA93B91_to_shape__4D9BF4C2-7E35-451E-A60F-1A8FBD0F83A4" bpmnElement="Flow_0dggz8v">
-        <di:waypoint x="214" y="134"/>
-        <di:waypoint x="347" y="134"/>
+        <di:waypoint x="214" y="129"/>
+        <di:waypoint x="347" y="129"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__4D9BF4C2-7E35-451E-A60F-1A8FBD0F83A4_to_shape__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC" bpmnElement="Flow_0inbxal">
-        <di:waypoint x="501" y="134"/>
-        <di:waypoint x="672" y="134"/>
+        <di:waypoint x="501" y="129"/>
+        <di:waypoint x="672" y="129"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__6AF123AA-EDAD-4CE3-ACF0-667E5A07BCDC_to_shape__3D3B930C-46EF-4211-B8CC-F25399E71F51" bpmnElement="Flow_0ayuoij">
-        <di:waypoint x="826" y="134"/>
-        <di:waypoint x="1048" y="134"/>
+        <di:waypoint x="826" y="129"/>
+        <di:waypoint x="1048" y="129"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
@@ -211,7 +191,7 @@ kcontext.setVariable("inputVariables",inputVariables);</bpmn2:script>
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_DiOoANP3EDyNav_bCXxw3w</bpmn2:source>
-    <bpmn2:target>_DiOoANP3EDyNav_bCXxw3w</bpmn2:target>
+    <bpmn2:source>_k4JmsNP-EDyNav_bCXxw3w</bpmn2:source>
+    <bpmn2:target>_k4JmsNP-EDyNav_bCXxw3w</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>

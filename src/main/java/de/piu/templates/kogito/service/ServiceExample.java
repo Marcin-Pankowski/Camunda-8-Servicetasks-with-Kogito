@@ -8,10 +8,15 @@ import javax.inject.Singleton;
 @Singleton
 public class ServiceExample {
 
-    public String doSomething(String variableA , String variableB, Map<String,Object> inputVariablesJavaObject) {
+    public Map<String,Object> doSomething(Map<String,Object> inputVariablesJavaObject) {
 
-        String result = "Services with " + variableA + " " + variableB + " the World!";
-        result = result + " with complex input variables : " + inputVariablesJavaObject.toString();
+        var variableA = inputVariablesJavaObject.get("variableA");
+        var variableB = inputVariablesJavaObject.get("variableB");
+
+        String resultText = "Services with " + variableA + " " + variableB + " the World!";
+        resultText = resultText + " with complex input variables : " + inputVariablesJavaObject.toString();
+
+        Map<String,Object> result = Map.of("resultText", resultText);
 
         return result;
     }   

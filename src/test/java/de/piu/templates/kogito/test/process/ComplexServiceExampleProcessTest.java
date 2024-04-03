@@ -10,6 +10,7 @@ import org.kie.kogito.process.Processes;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,7 +37,20 @@ public class ComplexServiceExampleProcessTest {
     public void checkIfProcessEndIsReached() {
 
         var process = processes.processById("ComplexServiceExample");
-        var processInstance = process.createInstance(process.createModel());
+        var model = process.createModel();
+
+        Map<String, Object> processVariables = new HashMap<>();
+
+        Map<String, Object> inputVariables = new HashMap<>();
+        inputVariables.put("variableA", "Kogito");
+        inputVariables.put("variableB", "rocks");
+
+        processVariables.put("inputVariables", inputVariables);
+        processVariables.put("jobKey", 1234L);
+
+        model.fromMap(processVariables);
+
+        var processInstance = process.createInstance(model);
         processInstance.start();
 
         assertThat(processInstance.status()).isEqualTo(org.kie.api.runtime.process.ProcessInstance.STATE_COMPLETED);
@@ -50,7 +64,20 @@ public class ComplexServiceExampleProcessTest {
     public void checkOutputVariablesAreExpected() {
 
         var process = processes.processById("ComplexServiceExample");
-        var processInstance = process.createInstance(process.createModel());
+        var model = process.createModel();
+
+        Map<String, Object> processVariables = new HashMap<>();
+
+        Map<String, Object> inputVariables = new HashMap<>();
+        inputVariables.put("variableA", "Kogito");
+        inputVariables.put("variableB", "rocks");
+
+        processVariables.put("inputVariables", inputVariables);
+        processVariables.put("jobKey", 1234L);
+
+        model.fromMap(processVariables);
+
+        var processInstance = process.createInstance(model);
         processInstance.start();
 
         var processOutputvariables = processInstance.variables().toMap();

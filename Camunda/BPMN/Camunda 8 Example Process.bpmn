@@ -17,7 +17,6 @@
         <zeebe:ioMapping>
           <zeebe:input source="=&#34;Kogito&#34;" target="variableA" />
           <zeebe:input source="=&#34;rocks&#34;" target="variableB" />
-          <zeebe:output source="=response." target="result" />
         </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1h87hzd</bpmn:incoming>
