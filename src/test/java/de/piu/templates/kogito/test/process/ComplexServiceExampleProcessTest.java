@@ -80,11 +80,10 @@ public class ComplexServiceExampleProcessTest {
         var processInstance = process.createInstance(model);
         processInstance.start();
 
-        var processOutputvariables = processInstance.variables().toMap();
-        assertThat(((String)processOutputvariables.get("outputVariables")).equals("Services with Kogito rocks the World! with complex input variables : {KeyB=as input!!!, KeyA=JavaObject}"));
-
+        var processVariablesAfterCompletion = processInstance.variables();
+        @SuppressWarnings("unchecked")
+        var outputVariables = (Map<String, Object>) processVariablesAfterCompletion.toMap().get("outputVariables");
+        assertThat(outputVariables.get("resultText")).isEqualTo("Services with Kogito rocks the World! with complex input variables : {variableA=Kogito, variableB=rocks}");
     }
-
-
 }
 
