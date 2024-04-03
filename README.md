@@ -16,7 +16,8 @@ Unlike with a traditional approach, Kogito makes it easier to create reusable fu
 
 # How to use it?
 
-To experiment with the processes, please use Visual Studio Code and load the Kogito Bundle extension.
+To experiment with the processes, please use Visual Studio Code and load the Kogito Bundle extension. 
+Start your Docker environment.
 
 1. Pull this repository with VSC.
 2. Configure your Zeebe gateway address in the 'application.properties' file.
