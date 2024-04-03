@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1uhfeqh" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
   <bpmn:process id="kogito" name="Kogito does it all!" isExecutable="true">
+    <bpmn:extensionElements />
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1h87hzd</bpmn:outgoing>
     </bpmn:startEvent>
@@ -10,11 +11,13 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_10lpdug" sourceRef="kogitoTask" targetRef="Event_11vs6ql" />
     <bpmn:serviceTask id="kogitoTask" name="external Task">
+      <bpmn:documentation>Kogito does the work.</bpmn:documentation>
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="kogito" retries="1" />
         <zeebe:ioMapping>
-          <zeebe:input source="=&#34;Test&#34;" target="VariableA" />
-          <zeebe:input source="=&#34;Kogitorocks!&#34;" target="VariableB" />
+          <zeebe:input source="=&#34;Kogito&#34;" target="variableA" />
+          <zeebe:input source="=&#34;rocks&#34;" target="variableB" />
+          <zeebe:output source="=response." target="result" />
         </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1h87hzd</bpmn:incoming>

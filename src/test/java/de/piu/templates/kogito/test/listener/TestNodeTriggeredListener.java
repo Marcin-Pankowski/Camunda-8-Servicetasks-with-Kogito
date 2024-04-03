@@ -4,6 +4,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Synchronized;
+
 import org.jetbrains.annotations.TestOnly;
 import org.kie.api.event.process.ProcessNodeTriggeredEvent;
 import org.kie.kogito.internal.process.event.DefaultKogitoProcessEventListener;
@@ -22,6 +24,7 @@ public class TestNodeTriggeredListener extends DefaultKogitoProcessEventListener
 
 
     @Override
+    @Synchronized 
     public void beforeNodeTriggered(ProcessNodeTriggeredEvent event) {
         if(event.getProcessInstance().getProcessName().equals(processNameToObserve) || event.getProcessInstance().getProcessId().equals(processIdToObserve)) {
             triggeredNodesNames.add(event.getNodeInstance().getNodeName());

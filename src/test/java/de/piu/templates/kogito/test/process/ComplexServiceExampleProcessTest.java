@@ -43,7 +43,7 @@ public class ComplexServiceExampleProcessTest {
 
         var triggeredNodesNames = testNodeTriggeredListenerInstance.get().getTriggeredNodesNames();
         //Is the end node reached?
-        assertThat(triggeredNodesNames.stream().reduce((first, second) -> second).get()).isEqualTo("End");
+        assertThat(triggeredNodesNames.stream().reduce((first, second) -> second).get()).isEqualTo("Service fulfilled");
     }
 
     @Test
@@ -54,7 +54,7 @@ public class ComplexServiceExampleProcessTest {
         processInstance.start();
 
         var processOutputvariables = processInstance.variables().toMap();
-        assertThat(((Map<String,Object>)processOutputvariables.get("outputVariables")).get("key")).isEqualTo("value");
+        assertThat(((String)processOutputvariables.get("outputVariables")).equals("Services with Kogito rocks the World! with complex input variables : {KeyB=as input!!!, KeyA=JavaObject}"));
 
     }
 
