@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ComplexServiceExampleProcessTest {
+public class ComplexServiceExampleProcessIT {
 
 
     @Inject
